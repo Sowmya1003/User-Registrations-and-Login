@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "crispy_forms",
-    
+    'registration'
 
 ]
 
@@ -58,7 +58,7 @@ ROOT_URLCONF = 'register.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'TEMPLATES')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
