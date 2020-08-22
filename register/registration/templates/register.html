@@ -20,59 +20,44 @@
             -ms-filter: blur(10px);
             filter: blur(10px);
         }
-        .login-form
+        .registration-form
         {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
-            width: 400px;
-            height: 500px;
+            width: 600px;
+            height: 800px;
             padding: 80px 40px;
             box-sizing: border-box;
-            background: rgba(0,0,0,.5);
+            background: rgba(0,0,0,5);
         }
-        .avatar {
-            position: absolute;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            overflow: hidden;
-            top: calc(-80px/2);
-            left: calc(50% - 40px);
-        }
-        .login-form h2 {
+        
+        .registration-form h2 {
             margin: 0;
-            padding: 0 0 20px;
+            padding: 0 0 30px;
             color: #fff;
             text-align: center;
             text-transform: uppercase;
         }
-        .login-form p
+        .registration-form p
         {
-            margin: 0;
+            margin-left: 40px;
             padding: 0;
-            font-weight: bold;
+            font-weight: 200;
             color: #fff;
         }
-        .login-form input
+        .registration-form input
         {
-            width: 100%;
-            margin-bottom: 20px;
+            width: 80%;
+            
+            margin-left: 40px;
+            
         }
-        .login-form input[type="email"],
-        .login-form input[type="password"]
-        {
-            border: none;
-            border-bottom: 1px solid #fff;
-            background: transparent;
-            outline: none;
+        
+        .registration-form input[type="submit"] {
             height: 40px;
-            color: #fff;
-            font-size: 16px;
-        }
-        .login-form input[type="submit"] {
-            height: 30px;
+            width: 120px;
             color: #fff;
             font-size: 15px;
             background: red;
@@ -80,36 +65,47 @@
             border-radius: 25px;
             border: none;
             outline: none;
-            margin-top: 15%;
+            margin-top: 10%;
+            margin-left: 40%;
         }
-        .login -form a
+        .registration-form -form a
         {
             color: #fff;
             font-size: 14px;
             font-weight: bold;
             text-decoration: none;
         }
-        input[type="checkbox"] {
-            width: 20%;
-        }
+       
+       
     </style>
+    <script>
+        $(".toggle-password").click(function() {
+
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+              input.attr("type", "text");
+            } else {
+              input.attr("type", "password"); 
+            }
+          });
+    </script>
 </head>
 <body>
-    <div class="login-form">
-        <img src="http://www.pngall.com/wp-content/uploads/2/C-Letter-PNG-High-Quality-Image.png"alt"="" class="avatar">
-        <h2>login Form</h2>
+    <div class="registration-form">
+        <h2>Registration Form</h2>
         <form action="/action_page.php">
-          <label for="fname">First name:</label><br>
-          <input type="text" id="fname" name="fname"><br>
-          <label for="lname">Last name:</label><br>
-          <input type="text" id="lname" name="lname"><br>
+            <p>First Name:</p>
+            <input type="text" placeholder="Enter First Name" name = "fname"><br><br>
+            <p>Last Name:</p>
+            <input type="text" placeholder="Enter Last Name" name = "lname"><br><br>
           <p>Email:</p>
-          <input type="text" placeholder="Enter Email" name = "email"><br><br>
+          <input type="email" placeholder="Enter Email" name = "email"><br><br>
           <p>Password</p>
-          <input type="text" placeholder="Enter Password" name = "password1"><br>
+          <input type="password" placeholder="Enter Password" name = "password1" ><br>
+          <span toggle="#password-field" class="fa fa-lg fa-eye field-icon toggle-password"></span>
           <p>Confirm Password</p>
-          <input type="text" placeholder="Confirm Password" name = "password2"><br><br>
-          
+          <input type="password" placeholder="Confirm Password" name = "password2"><br><br>
           <input type="submit" value="Submit">
            
         </form> 
