@@ -1,13 +1,20 @@
+
 <!DOCTYPE html>
 <title>KU Attendance </title>
 <head>
 Welcome
 </head>
 <body>
-    <a href="">
-     <button >
-        Register
     
-    </button>
-</a>
-</body>
+    
+    <h1> Home Page</h1>
+    <nav>
+        <a href="{% url 'home_page' %}">Home</a>
+        <a href="{% url 'register_page' %}">Register</a>
+    </nav>
+
+    {% block content %}
+        <h1>This is content part in base file.</h1>
+    {% endblock content %}
+    </body>
+</html>

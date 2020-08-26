@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from registration.views import registration
+from registration.views import registration, home_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',registration)
+    path('register/', registration, name='register_page'), # path which u have added here is the url for ur view
+   path('home/', home_view, name="home_page") # by using name i don't need to change everywhere with i have using navigation <a> tag
+
+    
 ]
