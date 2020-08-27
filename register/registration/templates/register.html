@@ -17,6 +17,9 @@
     {% csrf_token %}
     <p>Username:</p>
     <input type="text" placeholder="Enter Username" name = "username"><br><br>
+    {%for message in messages%}
+    <h6>{{message}}</h6>
+   {%endfor%}
      <p>First Name:</p>
      <input type="text" placeholder="Enter First Name" name = "first_name"><br><br>
      <p>Last Name:</p>

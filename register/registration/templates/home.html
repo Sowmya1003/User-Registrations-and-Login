@@ -11,10 +11,26 @@ Welcome
     <nav>
         <a href="{% url 'home_page' %}">Home</a>
         <a href="{% url 'register_page' %}">Register</a>
+        <a href="{% url 'login_page' %}">Login</a>
+
+
     </nav>
 
     {% block content %}
         <h1>This is content part in base file.</h1>
     {% endblock content %}
+    <!-- <div id="content">
+        <div class="alert alert-success m-2" id="msg" role="alert">
+            Alert!
+        </div>
+    </div> -->
+<!-- 
+    <script>
+        setTimeout(function(){
+            if($('#msg').length>0){
+                $('#msg').remove();
+            }
+        },2000)
+    </script> -->
     </body>
 </html>

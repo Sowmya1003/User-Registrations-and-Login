@@ -1,0 +1,36 @@
+{%extends "home.html"%}
+
+<!-- When you extend the 'home.html' and added  that means it will replace in between block tag-->
+{% block content %}
+<title>Login Form</title>
+<body>
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+  }
+  
+  </style>
+  <div class="container" style="background-color: blanchedalmond;">
+<div class="login">
+ <form action="" method="POST">
+    {% csrf_token %}
+  
+   <p>Email:</p>
+   <input type="email" placeholder="Enter Email" name = "email"><br><br>
+   <p>Password</p>
+   <input type="password" placeholder="Enter Password" name = "password" ><br>
+   <!-- <span toggle="#password-field" class="fa fa-lg fa-eye field-icon toggle-password"></span> -->
+   <div>
+       {%for message in messages%}
+       {{message}}
+       {%endfor%}
+   </div>
+  
+   <input type="submit" value="Login">
+     </form>
+
+    </div>
+    </div>
+  </body>
+{% endblock content %}
