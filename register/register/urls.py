@@ -15,13 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from registration.views import registration, home_view, login_page,welcome_page
+from registration.views import registration, home_view, login_page,welcome_page,logout
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', registration, name='register_page'), # path which u have added here is the url for ur view
     path('home/', home_view, name="home_page"), # by using name i don't need to change everywhere with i have using navigation <a> tag
     path('login/', login_page, name="login_page"),
-    path('welcome/', welcome_page, name="welcome_page")
+    path('welcome/', welcome_page, name="welcome_page"),
+    path('logout/',logout, name='logout')
 
 ]

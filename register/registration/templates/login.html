@@ -15,7 +15,11 @@
 <div class="login">
  <form action="" method="POST">
     {% csrf_token %}
-  
+    <div>
+      {%for message in messages%}
+      {{message}}
+      {%endfor%}
+  </div>
    <p>Email:</p>
    <input type="email" placeholder="Enter Email" name = "email"><br><br>
    <p>Password</p>
